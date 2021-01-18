@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="412.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="460.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
-      <Label layoutX="44.0" layoutY="14.0" text="Change Bell ">
+      <Label layoutX="69.0" layoutY="14.0" text="Change Bell ">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
@@ -58,16 +58,53 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="t1" layoutX="150.0" layoutY="64.0" prefHeight="26.0" prefWidth="86.0" />
-      <TextField fx:id="t2" layoutX="150.0" layoutY="98.0" prefHeight="26.0" prefWidth="86.0" />
-      <TextField fx:id="t3" layoutX="150.0" layoutY="133.0" prefHeight="26.0" prefWidth="86.0" />
-      <TextField fx:id="t4" layoutX="150.0" layoutY="167.0" prefHeight="26.0" prefWidth="86.0" />
-      <TextField fx:id="t5" layoutX="150.0" layoutY="203.0" prefHeight="26.0" prefWidth="86.0" />
-      <TextField fx:id="t6" layoutX="150.0" layoutY="237.0" prefHeight="26.0" prefWidth="86.0" />
-      <TextField fx:id="t7" layoutX="150.0" layoutY="272.0" prefHeight="26.0" prefWidth="86.0" />
-      <TextField fx:id="t8" layoutX="150.0" layoutY="306.0" prefHeight="26.0" prefWidth="86.0" />
-      <TextField fx:id="t9" layoutX="150.0" layoutY="341.0" prefHeight="26.0" prefWidth="86.0" />
-      <Button layoutX="181.0" layoutY="375.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="55.0" text="save">
+      <Label layoutX="14.0" layoutY="380.0" text="Gatha         :-">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="t1" layoutX="200.0" layoutY="64.0" prefHeight="26.0" prefWidth="86.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="t2" layoutX="200.0" layoutY="98.0" prefHeight="26.0" prefWidth="86.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="t3" layoutX="200.0" layoutY="133.0" prefHeight="26.0" prefWidth="86.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="t4" layoutX="200.0" layoutY="167.0" prefHeight="26.0" prefWidth="86.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="t5" layoutX="200.0" layoutY="203.0" prefHeight="26.0" prefWidth="86.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="t6" layoutX="200.0" layoutY="237.0" prefHeight="26.0" prefWidth="86.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="t7" layoutX="200.0" layoutY="272.0" prefHeight="26.0" prefWidth="86.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="t8" layoutX="200.0" layoutY="306.0" prefHeight="26.0" prefWidth="86.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="t9" layoutX="200.0" layoutY="341.0" prefHeight="26.0" prefWidth="86.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="t10" layoutX="200.0" layoutY="378.0" prefHeight="26.0" prefWidth="86.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Button onAction="#save" layoutX="231.0" layoutY="418.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="55.0" text="save">
          <font>
             <Font size="14.0" />
          </font>

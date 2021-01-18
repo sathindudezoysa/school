@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -17,12 +16,7 @@
           <Menu mnemonicParsing="false" text="File">
             <items>
                   <MenuItem mnemonicParsing="false" onAction="#ctime" text="Change Times" />
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
@@ -32,7 +26,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Label fx:id="Lclock" alignment="CENTER" contentDisplay="CENTER" layoutX="46.0" layoutY="125.0" prefHeight="61.0" prefWidth="290.0" text="00:00:00" textFill="RED">
+      <Label fx:id="Lclock" alignment="CENTER" contentDisplay="CENTER" layoutX="39.0" layoutY="221.0" prefHeight="61.0" prefWidth="290.0" text="00:00:00" textFill="RED">
          <font>
             <Font size="60.0" />
          </font>
@@ -42,20 +36,25 @@
             <Image url="@logo1.png" />
          </image>
       </ImageView>
-      <Label layoutX="61.0" layoutY="43.0" text="Media &amp; Broadcasting Unit">
+      <Label layoutX="60.0" layoutY="53.0" text="Media &amp; Broadcasting Unit">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label layoutX="224.0" layoutY="87.0" text="Bell System">
+      <Label layoutX="223.0" layoutY="97.0" text="Bell System">
          <font>
             <Font size="26.0" />
          </font>
       </Label>
-      <TextArea fx:id="log" editable="false" layoutX="14.0" layoutY="197.0" prefHeight="230.0" prefWidth="321.0" text="Bell Log :-">
+      <ImageView fitHeight="31.0" fitWidth="40.0" layoutX="14.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="52.0" layoutY="409.0" text="Devil's Work">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="16.0" />
          </font>
-      </TextArea>
+      </Label>
    </children>
 </AnchorPane>
