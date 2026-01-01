@@ -14,8 +14,8 @@ public class AlarmService {
 
 
     public AlarmService(){
-        Alarm alarm = new Alarm("1 st", LocalTime.parse("14:51"), "/home/sathindu/Documents/Projects/school/abs_version_2/src/main/resources/com/example/abs_version_2/sounds/BELL.WAV", true);
-        Alarm alarm2 = new Alarm("1 st", LocalTime.parse("15:00"), "/home/sathindu/Documents/Projects/school/abs_version_2/src/main/resources/com/example/abs_version_2/sounds/BELL.WAV", true);
+        Alarm alarm = new Alarm("sd", "1 st", LocalTime.parse("14:51"), "/home/sathindu/Documents/Projects/school/abs_version_2/src/main/resources/com/example/abs_version_2/sounds/BELL.WAV", true);
+        Alarm alarm2 = new Alarm("asd", "1 st", LocalTime.parse("15:00"), "/home/sathindu/Documents/Projects/school/abs_version_2/src/main/resources/com/example/abs_version_2/sounds/BELL.WAV", true);
 
         alarmQueue.add(alarm);
         alarmQueue.add(alarm2);

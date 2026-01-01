@@ -49,7 +49,7 @@
 
         <Button fx:id="saveButton" text="Save"
                 onAction="#saveAlarm"
-                style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-padding: 5 20;"/>
+                style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-padding: 5 20;"/>
     </HBox>
 
 </VBox>

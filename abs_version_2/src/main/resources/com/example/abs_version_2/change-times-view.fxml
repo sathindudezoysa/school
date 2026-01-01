@@ -19,7 +19,7 @@
         <Label text="Bell Times" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
     </HBox>
 
-    <!-- Add Alarm Button -->
+
     <Button fx:id="addAlarmButton" text="Add Time"
             onAction="#openAddAlarmWindow"
             style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 14px;

@@ -2,7 +2,12 @@ package com.example.abs_version_2;
 
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class MainController {
     @FXML
@@ -36,7 +41,19 @@ public class MainController {
 
     @FXML
     protected void change_time(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("change-times-view.fxml"));
+            Parent root = loader.load();
 
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Add Alarm");
+            dialogStage.initModality(Modality.APPLICATION_MODAL);
+            dialogStage.setScene(new Scene(root));
+            dialogStage.showAndWait();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 

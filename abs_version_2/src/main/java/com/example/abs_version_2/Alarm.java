@@ -11,12 +11,25 @@ public class Alarm implements Comparable<Alarm>{
     private String sound;
     private boolean isActive;
 
-    public Alarm(String name, LocalTime time, String sound, boolean isActive) {
+    public Alarm(String id, String name, LocalTime time, String sound, boolean isActive) {
+//        this.id = java.util.UUID.randomUUID().toString();;
+        this.id = id;
+        this.name = name;
+        this.time = time;
+        this.sound = sound;
+        this.isActive = isActive;
+    }
+
+    public Alarm( String name, LocalTime time, String sound, boolean isActive) {
         this.id = java.util.UUID.randomUUID().toString();;
         this.name = name;
         this.time = time;
         this.sound = sound;
         this.isActive = isActive;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getId() {
@@ -53,6 +66,10 @@ public class Alarm implements Comparable<Alarm>{
 
     public void setSound(String sound) {
         this.sound = sound;
+    }
+
+    public String getFormattedTime() {
+        return time.format(java.time.format.DateTimeFormatter.ofPattern("h:mm a"));
     }
 
     @Override
