@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.abs_version_2.AlarmController"
+      prefHeight="500.0" prefWidth="400.0"
+      spacing="10" style="-fx-background-color: white;">
+
+    <!-- Header -->
+    <HBox alignment="CENTER" style="-fx-background-color: #f8f9fa; -fx-border-color: #dee2e6; -fx-border-width: 0 0 1 0;">
+        <padding>
+            <Insets top="15" right="20" bottom="15" left="20"/>
+        </padding>
+        <Label text="Bell Times" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <!-- Add Alarm Button -->
+    <Button fx:id="addAlarmButton" text="Add Time"
+            onAction="#openAddAlarmWindow"
+            style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 14px;
+                   -fx-padding: 8 20; -fx-background-radius: 4;"
+            maxWidth="Infinity" HBox.hgrow="ALWAYS">
+        <VBox.margin>
+            <Insets top="10" left="20" right="20" bottom="20"/>
+        </VBox.margin>
+    </Button>
+
+
+    <!-- Alarm List Section -->
+    <Label text="Times" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 10 20 5 20;"/>
+
+    <!-- Alarm List -->
+    <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-padding: 0 20;">
+        <VBox fx:id="alarmListContainer" spacing="8">
+            <!-- Alarms will be added here dynamically -->
+        </VBox>
+    </ScrollPane>
+
+
+</VBox>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.abs_version_2.AddAlarmController"
+      spacing="15" style="-fx-background-color: white; -fx-padding: 20;">
+
+    <!-- Header -->
+    <Label text="Set Alarm" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <!-- Alarm Name -->
+    <VBox spacing="5">
+        <Label text="Name:"/>
+        <TextField fx:id="alarmNameField" promptText="Alarm name"/>
+    </VBox>
+
+    <!-- Time Selection -->
+    <VBox spacing="5">
+        <Label text="Time:"/>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <!-- Hour -->
+            <ChoiceBox fx:id="hourChoiceBox" prefWidth="70"/>
+
+            <!-- Minute -->
+            <ChoiceBox fx:id="minuteChoiceBox" prefWidth="70"/>
+
+            <!-- AM/PM -->
+            <ChoiceBox fx:id="ampmChoiceBox" prefWidth="70"/>
+        </HBox>
+    </VBox>
+
+    <!-- Sound Selection -->
+    <VBox spacing="5">
+        <Label text="Sound:"/>
+        <ChoiceBox fx:id="soundChoiceBox"/>
+    </VBox>
+
+
+    <!-- Buttons -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="cancelButton" text="Cancel"
+                onAction="#cancelAlarm"
+                style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-padding: 5 15;"/>
+
+        <Button fx:id="saveButton" text="Save"
+                onAction="#saveAlarm"
+                style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-padding: 5 20;"/>
+    </HBox>
+
+</VBox>
