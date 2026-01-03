@@ -9,6 +9,8 @@ import javafx.scene.control.Label;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class MainController {
     @FXML
     private Label clock_view;
@@ -63,6 +65,18 @@ public class MainController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+
+    @FXML
+    public void about() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("about.fxml"));
+        Stage stage = new Stage();
+        stage.setTitle("About");
+        stage.setScene(new Scene(root));
+        stage.show();
+
+
     }
 
 

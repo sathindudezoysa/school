@@ -11,6 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.util.Collections;
 import java.util.List;
 
 public class AlarmController {
@@ -37,6 +38,7 @@ public class AlarmController {
     private void loadAlarmsFromDatabase() {
         alarmListContainer.getChildren().clear();
         alarms = dbHelper.getAllAlarms();
+        Collections.sort(alarms);
 
         for (Alarm alarm : alarms) {
             try {
@@ -85,6 +87,8 @@ public class AlarmController {
     }
 
     public void updateAlarmStatus(String alarmId, boolean isActive) {
+        alarmQueue.changeState(alarmId, isActive);
+
         dbHelper.updateAlarmStatus(alarmId, isActive);
     }
 

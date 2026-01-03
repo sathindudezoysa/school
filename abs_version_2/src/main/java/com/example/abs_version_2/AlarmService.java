@@ -23,17 +23,24 @@ public class AlarmService {
 
     public AlarmService(){
         alarmQueue = AlarmQueue.getInstance();
+
     }
     public void startChecking() {
 
         scheduler.scheduleAtFixedRate(() -> {
             synchronized (alarmQueue) {
-                if (alarmQueue.isEmpty()) return;
+                if (alarmQueue.isEmpty()) {
+                    Platform.runLater(()->{
+                        this.nextBell.set("");
+                    });
+                    return;
+                }
                 Alarm nextAlarm = alarmQueue.peek();
 
                 Platform.runLater(()->{
                     this.nextBell.set(nextAlarm.getTime().toString());
                 });
+
 
                 if (!nextAlarm.isActive()){
                     alarmQueue.poll();

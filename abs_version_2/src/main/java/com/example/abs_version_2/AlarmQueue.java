@@ -48,8 +48,9 @@ public class AlarmQueue {
         return instance;
     }
 
-    public synchronized PriorityQueue<Alarm> getQueue(){
-        return alarmQueue;
+    public synchronized List<Alarm> getAlarms(){
+        List<Alarm> alarms = alarmQueue.stream().toList();
+        return alarms;
     }
 
     public synchronized void poll(){
@@ -57,6 +58,7 @@ public class AlarmQueue {
     }
 
     public void deleteItemById(String id){
+        System.out.println(id);
         alarmQueue.removeIf(i -> i.getId().equals(id));
     }
 
@@ -75,6 +77,17 @@ public class AlarmQueue {
 
     public synchronized Alarm peek(){
         return alarmQueue.peek();
+    }
+
+    public void changeState(String alarmId, boolean isActive){
+        loadAlarms();
+        for (Alarm a: alarmQueue){
+            if (a.getId().equals(alarmId)){
+                a.setActive(isActive);
+                break;
+            }
+        }
+
     }
 
 

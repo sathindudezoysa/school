@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Rectangle?>
+
+<VBox prefHeight="500.0" prefWidth="550.0" style="-fx-background-color: #f8f9fa; -fx-padding: 25;" spacing="15" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+
+   <!-- Header -->
+   <VBox spacing="5">
+      <Label text="About This Project" style="-fx-text-fill: #2c3e50;">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label text="Dharmasoka College Media Unit" style="-fx-text-fill: #3498db; -fx-font-weight: bold;">
+         <font><Font size="16.0" /></font>
+      </Label>
+   </VBox>
+
+   <Separator prefWidth="500.0" style="-fx-background-color: #3498db;"/>
+
+   <!-- Main Content Card -->
+   <StackPane style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+      <VBox spacing="20" style="-fx-padding: 25;">
+         <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+
+         <!-- Version Timeline -->
+         <VBox spacing="10">
+            <Label text="Version History" style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;">
+               <font><Font size="16.0" /></font>
+            </Label>
+
+            <HBox spacing="20" alignment="CENTER_LEFT">
+               <!-- Original Version -->
+               <VBox spacing="5" style="-fx-background-color: #e8f4fc; -fx-background-radius: 8; -fx-padding: 15; -fx-pref-width: 200;">
+                  <HBox spacing="8" alignment="CENTER_LEFT">
+                     <Rectangle width="12" height="12" arcWidth="6" arcHeight="6" fill="#3498db" />
+                     <Label text="Original Release" style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;">
+                        <font><Font size="13.0" /></font>
+                     </Label>
+                  </HBox>
+                  <Label text="2021.01.18" style="-fx-text-fill: #3498db; -fx-font-weight: bold; -fx-font-size: 18;">
+                     <font><Font size="18.0" /></font>
+                  </Label>
+                  <Label text="Initial Launch" style="-fx-text-fill: #7f8c8d;">
+                     <font><Font size="12.0" /></font>
+                  </Label>
+               </VBox>
+
+               <!-- Updated Version -->
+               <VBox spacing="5" style="-fx-background-color: #f0f7ff; -fx-background-radius: 8; -fx-padding: 15; -fx-pref-width: 200;">
+                  <HBox spacing="8" alignment="CENTER_LEFT">
+                     <Rectangle width="12" height="12" arcWidth="6" arcHeight="6" fill="#2ecc71" />
+                     <Label text="Latest Update" style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;">
+                        <font><Font size="13.0" /></font>
+                     </Label>
+                  </HBox>
+                  <Label text="2025.01.03" style="-fx-text-fill: #2ecc71; -fx-font-weight: bold; -fx-font-size: 18;">
+                     <font><Font size="18.0" /></font>
+                  </Label>
+                  <Label text="Current Version" style="-fx-text-fill: #7f8c8d;">
+                     <font><Font size="12.0" /></font>
+                  </Label>
+               </VBox>
+            </HBox>
+
+            <!-- Timeline connector -->
+            <HBox alignment="CENTER" style="-fx-padding: -10 0 0 0;">
+               <Separator prefWidth="80" style="-fx-background-color: #bdc3c7;"/>
+               <Label text="→" style="-fx-text-fill: #95a5a6; -fx-padding: 0 5;"/>
+               <Separator prefWidth="80" style="-fx-background-color: #bdc3c7;"/>
+            </HBox>
+         </VBox>
+
+         <!-- Development Team -->
+         <VBox spacing="12">
+            <Label text="Development Team" style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;">
+               <font><Font size="16.0" /></font>
+            </Label>
+
+            <!-- Use HBox instead of GridPane -->
+            <HBox spacing="40" alignment="CENTER_LEFT">
+               <!-- Programmer -->
+               <VBox spacing="4" prefWidth="200">
+                  <HBox spacing="8" alignment="CENTER_LEFT">
+                     <Label text="Programmer" style="-fx-text-fill: #7f8c8d; -fx-font-weight: bold;">
+                        <font><Font size="13.0" /></font>
+                     </Label>
+                  </HBox>
+                  <Label text="Sathindu Dhanushka" style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;">
+                     <font><Font size="14.0" /></font>
+                  </Label>
+                  <Label text="2022 (A/L) Batch" style="-fx-text-fill: #95a5a6; -fx-font-style: italic;">
+                     <font><Font size="11.0" /></font>
+                  </Label>
+               </VBox>
+
+               <!-- Sound Artist -->
+               <VBox spacing="4" prefWidth="200">
+                  <HBox spacing="8" alignment="CENTER_LEFT">
+                     <Label text="Sound Artist" style="-fx-text-fill: #7f8c8d; -fx-font-weight: bold;">
+                        <font><Font size="13.0" /></font>
+                     </Label>
+                  </HBox>
+                  <Label text="Menura Nethmina" style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;">
+                     <font><Font size="14.0" /></font>
+                  </Label>
+                  <Label text="2022 (A/L) Batch" style="-fx-text-fill: #95a5a6; -fx-font-style: italic;">
+                     <font><Font size="11.0" /></font>
+                  </Label>
+               </VBox>
+            </HBox>
+         </VBox>
+
+         <!-- Special Thanks -->
+         <VBox spacing="12">
+            <Label text="Special Thanks" style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;">
+               <font><Font size="16.0" /></font>
+            </Label>
+
+            <VBox spacing="8" style="-fx-padding: 0 0 0 15;">
+               <HBox spacing="10" alignment="CENTER_LEFT">
+                  <Rectangle width="8" height="8" fill="#3498db" />
+                  <Label text="Dr. Kasun De Zoysa (UCSC)" style="-fx-text-fill: #2c3e50;">
+                     <font><Font size="13.0" /></font>
+                  </Label>
+               </HBox>
+               <HBox spacing="10" alignment="CENTER_LEFT">
+                  <Rectangle width="8" height="8" fill="#3498db" />
+                  <Label text="Principal Hasitha Kesara Wethamuni" style="-fx-text-fill: #2c3e50;">
+                     <font><Font size="13.0" /></font>
+                  </Label>
+               </HBox>
+               <HBox spacing="10" alignment="CENTER_LEFT">
+                  <Rectangle width="8" height="8" fill="#3498db" />
+                  <Label text="Principal K.A.D. Karunarathne" style="-fx-text-fill: #2c3e50;">
+                     <font><Font size="13.0" /></font>
+                  </Label>
+               </HBox>
+               <HBox spacing="10" alignment="CENTER_LEFT">
+                  <Rectangle width="8" height="8" fill="#3498db" />
+                  <Label text="Teachers in charge of the media unit" style="-fx-text-fill: #2c3e50;">
+                     <font><Font size="13.0" /></font>
+                  </Label>
+               </HBox>
+            </VBox>
+         </VBox>
+      </VBox>
+   </StackPane>
+
+   <!-- Footer -->
+   <VBox spacing="5" alignment="CENTER_RIGHT">
+      <Separator prefWidth="500.0" style="-fx-background-color: #bdc3c7;"/>
+
+      <HBox spacing="10" alignment="CENTER_RIGHT">
+         <Label text="sathindu.d.zoysa@gmail.com" style="-fx-text-fill: #3498db;">
+            <font><Font size="12.0" /></font>
+         </Label>
+         <Label text="•" style="-fx-text-fill: #bdc3c7;">
+            <font><Font size="12.0" /></font>
+         </Label>
+         <HBox spacing="5">
+            <Label text="by" style="-fx-text-fill: #7f8c8d;">
+               <font><Font size="12.0" /></font>
+            </Label>
+            <Label text="Devi's Work" style="-fx-text-fill: #e74c3c; -fx-font-weight: bold;">
+               <font><Font size="12.0" /></font>
+            </Label>
+         </HBox>
+      </HBox>
+   </VBox>
+</VBox>
