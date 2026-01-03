@@ -35,4 +35,12 @@ public class Play extends Thread{
             clip.play();
         }
     }
+
+    public void stopPlaying(){
+        if (clip != null){
+            clip.stop();
+        }
+    }
+
+
 }

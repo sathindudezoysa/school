@@ -13,6 +13,8 @@ public class MainController {
     @FXML
     private Label clock_view;
 
+    @FXML private Label next_bell;
+
     Task<String> clock = Clock.stratClock();
 
     private AlarmService alarmService;
@@ -20,14 +22,16 @@ public class MainController {
 
     @FXML
     public void initialize(){
-        wall_clock();
+        wallClock();
         alarmService = new AlarmService();
+        alarmService.startChecking();
+        next_bell.textProperty().bind(alarmService.nextBellProperty());
     }
 
     /**
      * Wall Clock Logic
      */
-    public void wall_clock(){
+    private void wallClock(){
         clock_view.textProperty().bind(clock.messageProperty());
         clock.setOnFailed(e -> {
             clock_view.textProperty().unbind();
@@ -49,6 +53,11 @@ public class MainController {
             dialogStage.setTitle("Add Alarm");
             dialogStage.initModality(Modality.APPLICATION_MODAL);
             dialogStage.setScene(new Scene(root));
+
+            dialogStage.setOnCloseRequest(e ->{
+                alarmService.startChecking();
+            });
+
             dialogStage.showAndWait();
 
         } catch (Exception e) {

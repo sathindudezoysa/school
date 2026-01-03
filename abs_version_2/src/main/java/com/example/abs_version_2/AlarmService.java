@@ -1,7 +1,13 @@
 package com.example.abs_version_2;
 
+import javafx.application.Platform;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.scene.control.Label;
+
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.PriorityQueue;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -9,29 +15,29 @@ import java.util.concurrent.TimeUnit;
 
 public class AlarmService {
 
-    private final PriorityQueue<Alarm> alarmQueue = new PriorityQueue<>();
+    private AlarmQueue alarmQueue;
     private final ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
+
+    private StringProperty nextBell = new SimpleStringProperty(this, "nextBell", "");
 
 
     public AlarmService(){
-        Alarm alarm = new Alarm("sd", "1 st", LocalTime.parse("14:51"), "/home/sathindu/Documents/Projects/school/abs_version_2/src/main/resources/com/example/abs_version_2/sounds/BELL.WAV", true);
-        Alarm alarm2 = new Alarm("asd", "1 st", LocalTime.parse("15:00"), "/home/sathindu/Documents/Projects/school/abs_version_2/src/main/resources/com/example/abs_version_2/sounds/BELL.WAV", true);
-
-        alarmQueue.add(alarm);
-        alarmQueue.add(alarm2);
-        startChecking();
+        alarmQueue = AlarmQueue.getInstance();
     }
-    private void startChecking() {
-
-        removePassedAlarms();
+    public void startChecking() {
 
         scheduler.scheduleAtFixedRate(() -> {
             synchronized (alarmQueue) {
                 if (alarmQueue.isEmpty()) return;
-
                 Alarm nextAlarm = alarmQueue.peek();
-                if (nextAlarm.getTime().toString().equals(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm")))) {
 
+                Platform.runLater(()->{
+                    this.nextBell.set(nextAlarm.getTime().toString());
+                });
+
+                if (!nextAlarm.isActive()){
+                    alarmQueue.poll();
+                }else if (nextAlarm.getTime().toString().equals(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm")))) {
                     System.out.println("Bell ");
                     playAlarm(nextAlarm);
 
@@ -46,15 +52,9 @@ public class AlarmService {
         play.start();
     }
 
-    private void removePassedAlarms(){
-        LocalTime currentTime  = LocalTime.now();
-        for (Alarm i : alarmQueue){
-            if(i.getTime().isBefore(currentTime)){
-                alarmQueue.poll();
-            }else{
-                break;
-            }
-        }
+
+    public StringProperty nextBellProperty(){
+        return nextBell;
     }
 
     public void shutdown() {

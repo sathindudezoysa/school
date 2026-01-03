@@ -11,7 +11,7 @@
       spacing="15" style="-fx-background-color: white; -fx-padding: 20;">
 
     <!-- Header -->
-    <Label text="Set Alarm" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    <Label text="Set Bell Time" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
 
     <!-- Alarm Name -->
     <VBox spacing="5">
@@ -37,7 +37,13 @@
     <!-- Sound Selection -->
     <VBox spacing="5">
         <Label text="Sound:"/>
-        <ChoiceBox fx:id="soundChoiceBox"/>
+        <Button text="Select File" onAction="#onSelectFile"/>
+        <HBox>
+        <Label fx:id="preText" text="No file selected" wrapText="true"/>
+        <Label fx:id="fileLabel" wrapText="true"/>
+
+        </HBox>
+        <Button text="Test" fx:id="testButton" disable="true" onAction="#testSound"/>
     </VBox>
 
 

@@ -9,9 +9,9 @@ import javafx.scene.layout.HBox;
 public class AlarmItemController {
     @FXML private Label timeLabel;
     @FXML private Label nameLabel;
-//    @FXML private Label soundLabel;
     @FXML private ToggleButton toggleButton;
-//    @FXML private Button deleteButton;
+    @FXML private Button deleteButton;
+    @FXML private Label bellFile;
 //    @FXML private HBox alarmItemContainer;
 
     private Alarm alarm;
@@ -26,10 +26,7 @@ public class AlarmItemController {
     private void updateUI() {
         timeLabel.setText(alarm.getFormattedTime());
         nameLabel.setText(alarm.getName());
-
-//        // Set sound icon based on sound type
-//        String soundIcon = getSoundIcon(alarm.getSound());
-//        soundLabel.setText(soundIcon);
+        bellFile.setText(alarm.getSound());
 
         // Set toggle state
         toggleButton.setSelected(alarm.isActive());

@@ -21,10 +21,14 @@ public class AlarmController {
 
     private DatabaseHelper dbHelper;
 
+    private AlarmQueue alarmQueue;
+
+    private List<Alarm> alarms;
 
     @FXML
     public void initialize() {
         dbHelper = DatabaseHelper.getInstance();
+        alarmQueue = AlarmQueue.getInstance();
         loadAlarmsFromDatabase();
     }
 
@@ -32,7 +36,7 @@ public class AlarmController {
 
     private void loadAlarmsFromDatabase() {
         alarmListContainer.getChildren().clear();
-        List<Alarm> alarms = dbHelper.getAllAlarms();
+        alarms = dbHelper.getAllAlarms();
 
         for (Alarm alarm : alarms) {
             try {
@@ -64,29 +68,24 @@ public class AlarmController {
         }
     }
 
-
+    public List<Alarm> getAllAlarms(){
+        return alarms;
+    }
 
     public void addAlarmToDatabase(Alarm alarm) {
         dbHelper.addAlarm(alarm);
+        alarmQueue.addItem(alarm);
         loadAlarmsFromDatabase();
     }
 
     public void deleteAlarmFromDatabase(String alarmId) {
         dbHelper.deleteAlarm(alarmId);
+        alarmQueue.deleteItemById(alarmId);
         loadAlarmsFromDatabase();
     }
 
     public void updateAlarmStatus(String alarmId, boolean isActive) {
         dbHelper.updateAlarmStatus(alarmId, isActive);
     }
-
-
-//    public void showAlert(String title, String message) {
-//        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//        alert.setTitle(title);
-//        alert.setHeaderText(null);
-//        alert.setContentText(message);
-//        alert.showAndWait();
-//    }
 
 }
